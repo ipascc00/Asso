@@ -15,6 +15,10 @@ char h[10] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'};
 
 void inicialize() {
     char variableLocal[14000]; // Variable local de 14.000 bytes
+    printf("Dirección de variableLocal: %p\n", (void*)&variableLocal);
+    char cmd[25];
+    sprintf(cmd, "cat /proc/%d/maps", getpid());
+    system(cmd);
 }
 
 int main() {
